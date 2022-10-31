@@ -3,7 +3,11 @@ const proDuctRouter = express.Router()
 const Product = require('../models/product')
 proDuctRouter.get('/', async (req, res) => {
     let products = await Product.find().sort({createdAt:-1})
-    res.json(products,200)
+    res.send({
+        code:200,
+        data:products
+    })
+
 })
 
 
@@ -17,7 +21,10 @@ proDuctRouter.post('/', async (req, res) => {
         }
         let product = await Product.create(req.body)
 
-        res.send(product)
+        res.send({
+            code:200,
+            data:product
+        })
     } catch (error) {
         console.error(error)
         res.send(error.message)

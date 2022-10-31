@@ -10,7 +10,8 @@ mongoose.connect(mongoDbUrl,{},()=>{
 })
 app.use(bodyParser())
 app.get('/',(req,res)=>{
-    res.send("Happy Diwali")
+    console.log(process.env.DEMO_GREETING)
+    res.send(process.env.DEMO_GREETING)
 })
 
 
