@@ -1,52 +1,28 @@
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
-
- name: mongo-crud-app
- labels:
-
-   app: mongo-crud-app
-
+  name: mongo-crud-app
+  labels:
+    app: mongo-crud-app
 spec:
-
- replicas: 1
-
- selector:
-
-   matchLabels:
-
-     app: mongo-crud-app
-
- template:
-
-   metadata:
-
-     labels:
-
-       app: mongo-crud-app
-
-   spec:
-
-     containers:
-
-     - name: mongo-crud-app
-
-       image: tonudon86/mongo-crud:0.0.6
-       env:
-       - name: DEMO_GREETING
-         value: "Hello from the environment in kubernates" 
-
-
-       resources:
-
-         requests:
-
-           cpu: "100m"
-
-       imagePullPolicy: IfNotPresent
-
-       ports:
-
-       - containerPort: 3000
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-crud-app
+  template:
+    metadata:
+      labels:
+        app: mongo-crud-app
+    spec:
+      containers:
+      - name: mongo-crud-app
+        image: tonudon86/mongo-crud:0.0.6
+        env:
+        - name: DEMO_GREETING
+          value: "Hello from the environment in kubernetes"
+        resources:
+          requests:
+            cpu: "100m"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
