@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
 //
 
 
-app.use('/product',require('./routers/product'))
+
 
 app.listen(3000,()=>{
     console.log("Running")
