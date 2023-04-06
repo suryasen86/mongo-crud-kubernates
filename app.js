@@ -12,6 +12,7 @@ app.use(bodyParser())
 app.get('/',(req,res)=>{
     res.send(`Hello from Docker`)
 })
+//
 
 
 app.use('/product',require('./routers/product'))
