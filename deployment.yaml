@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo-crud-app
+  name: mongo-crud
   labels:
-    app: mongo-crud-app
+    app: mongo-crud
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongo-crud-app
+      app: mongo-crud
   template:
     metadata:
       labels:
-        app: mongo-crud-app
+        app: mongo-crud
     spec:
       containers:
-      - name: mongo-crud-app
-        image: tonudon86/mongo-crud:0.0.6
+      - name: mongo-crud
+        image: tonudon86/mongo-crud
         env:
         - name: DEMO_GREETING
           value: "Hello from the environment in kubernetes"
