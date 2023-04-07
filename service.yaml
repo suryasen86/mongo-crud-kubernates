@@ -3,11 +3,12 @@ kind: Service
 metadata:
   name: mongo-crud
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: mongo-crud
   ports:
     - name: http
       protocol: TCP
-      port: 3000
+      port: 8080
       targetPort: 3000
+      nodePort: 31200
